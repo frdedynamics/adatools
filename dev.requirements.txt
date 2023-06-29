@@ -1,0 +1,4 @@
+ruff==0.0.257
+pytest
+black
+mypy
