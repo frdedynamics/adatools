@@ -7,8 +7,10 @@
 # you are supposed to modify and returns the DHRobot object.
 # ------------------------------------------------------------------------ #
 
-from ..src import config_generator as cg
-
+# from ..src import config_generator as cg
+import sys
+sys.path.append('../')
+from src import config_generator as cg
 
 my_conf1_robot = cg.get_robot_config_1(link1=0.3, link1_offset=0.0,
                                        link2=0.3, link2_offset=0.0,
