@@ -6,12 +6,11 @@
 
 To install `adatools` follow these steps:
 
-1. Decide where you want to keep the toolbox. This can be anywhere on your computer. For example, you can make a new folder in Documents, or you can put it into your working directory for ADA526.
-
->>Open a termninal window, an `cd` into this directory. 
->>   ```shell
->>   cd path/to/your/directory
->>   ```
+1. Decide where you want to keep the toolbox. This can be anywhere on your computer. For example, you can make a new folder in Documents, or you can put it into your working directory for ADA526.  
+Open a termninal window, an `cd` into this directory. 
+   ```shell
+   cd path/to/your/directory
+   ```
 
 2. Clone the repository:
 
