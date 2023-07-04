@@ -22,12 +22,15 @@ def get_robot_config_1(link1 = 0.3, link2 = 0.3, link3 = 0.3, link4 = 0.14,
         DHRobot: Robot object representing the specified configuration.
 
     """
-    return rtb.DHRobot(
+    robot = rtb.DHRobot(
         [
-            rtb.RevoluteDH(d=link1, a=link1_offset, alpha=pi/2, qlim=[-90 *pi/180, 90 *pi/180]), 
-            rtb.RevoluteDH(a=link2, d=link2_offset, qlim=[-90 *pi/180, 90 *pi/180]),
-            rtb.RevoluteDH(a=link3, d=link3_offset, qlim=[-90 *pi/180, 90 *pi/180]),
-            rtb.RevoluteDH(alpha=pi/2,          qlim=[-90 *pi/180, 90 *pi/180]),
-            rtb.RevoluteDH(d=link4, a=link4_offset, qlim=[-180 *pi/180, 180 *pi/180]),
+            rtb.RevoluteDH(d=link1, a=link1_offset, alpha=pi/2, qlim=[-110 *pi/180, 110 *pi/180]), 
+            rtb.RevoluteDH(a=link2, d=link2_offset, qlim=[-80 *pi/180, 260 *pi/180]),
+            rtb.RevoluteDH(a=link3, d=link3_offset, qlim=[-170 *pi/180, 170 *pi/180]),
+            rtb.RevoluteDH(alpha=pi/2,              qlim=[-170 *pi/180, 170 *pi/180]),
+            rtb.RevoluteDH(d=link4, a=link4_offset, qlim=[-360 *pi/180, 360 *pi/180]),
         ], name="My Config 1 Robot")
+    robot.qr = [0, 0.4, -0.8, 0.4, 0]
+    
+    return robot
 
