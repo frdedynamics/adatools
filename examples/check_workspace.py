@@ -6,6 +6,9 @@ from spatialmath import SE3
 import numpy as np  
 import time
 
+# This example shows how to check if your robot can reach all the corners of the base plate.
+# If you see that the translational o andular distance is too large, the manipulability is close to zero or the Jacobian of the robot loses rank (rank < 5), you should consider changing the robot's link lengths and offsets.
+
 # Create a robot based on config1
 robot = cg.get_robot_config_1(link1=0.3, link1_offset=0.0,
                               link2=0.3, link2_offset=0.0,
