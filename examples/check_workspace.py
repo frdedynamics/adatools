@@ -41,10 +41,9 @@ for Tg in Tgoals:
     angular_distance = Tg.angdist(T)
     trans_distance = np.linalg.norm(Tg.t - T.t)
     manip = robot.manipulability(robot.q, method='minsingular', axes='all')
-    print("Pose %03d : Translational distance (norm): %0.5f, Angular distance (geodesic norm): %0.5f, Manipulability: %e" \
-           %(i, trans_distance, angular_distance, manip))
-    print("Jacobian Rank: ", np.linalg.matrix_rank(robot.jacob0(robot.q)))
-    
+    J_rank = np.linalg.matrix_rank(robot.jacob0(robot.q))
+    print("Pose %03d : Translational distance (norm): %0.4f, Angular distance (geodesic norm): %0.4f, Manipulability: %.4g, Jacobian Rank: %d" \
+           %(i, trans_distance, angular_distance, manip, J_rank))
     i = i + 1
     input("Press Enter in terminal to continue...")
     #time.sleep(2)
