@@ -1,1 +1,2 @@
 roboticstoolbox-python
+dynamixel-sdk
