@@ -18,6 +18,9 @@ PROTOCOL_VERSION            = 2.0
 PORT                        = "/dev/ttyUSB0"  # <-- you may need to change the port where the U2D2 is connected
 DXL_IDS                     = [1, 2, 3]  # [1, 2, 3, 4, 5]
 
+#######################################################
+# Set up the connection to the motors and enable torque
+#######################################################
 # Initialize PortHandler and PacketHandler instance
 portHandler = dxl.PortHandler(PORT)
 packetHandler = dxl.PacketHandler(PROTOCOL_VERSION)  # Protocol version  2.0
