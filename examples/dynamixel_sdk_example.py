@@ -94,7 +94,7 @@ for id in DXL_IDS:
 
 index = 1
 dxl_goal_position_limits = [0, 4095]         # Goal position limits
-random_goal_positions_np = np.random.randint(dxl_goal_position_limits[0], dxl_goal_position_limits[1], size=(len(DXL_IDS), 1)) # Generate random goal position for each servo
+random_goal_positions_np = np.random.randint(dxl_goal_position_limits[0], dxl_goal_position_limits[1], size=(len(DXL_IDS))) # Generate random goal position for each servo
 random_goal_positions = to4bytes(random_goal_positions_np) # Convert to 4 byte array
 
 # Add goal position values to the Syncwrite parameter storage
