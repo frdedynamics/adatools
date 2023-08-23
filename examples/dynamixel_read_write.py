@@ -2,7 +2,7 @@ import dynamixel_sdk as dxl
 import numpy as np
 from adatools import utils
 
-# This example shows how to use the Dynamixel SDK send and receive joint positions to multiple Dynamixel servos simultaneously.
+# This example shows how to use the Dynamixel SDK send and receive joint positions to 3 Dynamixel servos simultaneously.
 # The example uses the Dynamixel SDK's GroupSyncWrite and GroupSyncRead functions to send and receive data to and from the servos.
 
 
