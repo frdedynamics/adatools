@@ -35,3 +35,28 @@ def to4bytes(num):
         dxl.DXL_LOBYTE(high_word),
         dxl.DXL_HIBYTE(high_word)
     ]).tolist()
+
+def rad2steps(angle):
+    """
+    Convert angle in radians to dynamixel steps in a range of 0 to 4095.
+
+    Paramerers:
+        angle (float): Input angle in rad to be converted to steps.
+
+    Returns:
+        steps: (int): Angle expressed in steps.
+    """
+    radMax = np.pi
+    radMin = -np.pi
+    stepsMax = 4095
+    stepsMin = 0
+
+    # Figure out how 'wide' each range is
+    radSpan = radMax - radMin
+    stepsSpan = stepsMax - stepsMin
+
+    # Convert the rad range into a 0-1 range (float)
+    valueScaled = float(angle - radMin) / float(radSpan)
+
+    # Convert the 0-1 range into a value in the steps range.
+    return int(stepsMin + (valueScaled * stepsSpan))
