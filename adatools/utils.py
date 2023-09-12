@@ -60,3 +60,28 @@ def rad2steps(angle):
 
     # Convert the 0-1 range into a value in the steps range.
     return int(stepsMin + (valueScaled * stepsSpan))
+
+def steps2rad(steps):
+    """
+    Convert angle in dynamixel steps in a range of 0 to 4095 to rad in a range from -pi to pi.
+
+    Paramerers:
+        steps (int): Input angle in steps to be converted to radians.
+
+    Returns:
+        angle: (float): Angle expressed in radians.
+    """
+    radMax = np.pi
+    radMin = -np.pi
+    stepsMax = 4095
+    stepsMin = 0
+
+    # Figure out how 'wide' each range is
+    radSpan = radMax - radMin
+    stepsSpan = stepsMax - stepsMin
+
+    # Convert the rad range into a 0-1 range (float)
+    valueScaled = float(steps - stepsMin) / float(stepsSpan)
+
+    # Convert the 0-1 range into a value in the steps range.
+    return int(radMin + (valueScaled * radSpan))
