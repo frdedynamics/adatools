@@ -36,7 +36,7 @@ Tgoals.plot(ax=robot_plot.ax, length=0.1, style='rgb') # plot all goal poses
 sol = []
 i = 0
 for Tg in Tgoals:
-    sol.append(robot.ikine_LM(Tg, q0=robot.qr, mask=[1,1,1,0.5,0.5,0.5])) # inverse kinematics
+    sol.append(robot.ikine_LM(Tg, q0=robot.qr, mask=[1,1,1,0.5,0.5,1])) # inverse kinematics
     robot.q = sol[i].q
     robot_plot.step()
 
